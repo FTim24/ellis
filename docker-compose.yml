@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: api
+    ports:
+      - "8000:8000"
+    volumes:
+      - sqlite_db:/app
+    # O comando é herdado do Dockerfile, mas pode ser sobrescrito aqui se necessário.
+
+volumes:
+  sqlite_db:
+    driver: local
